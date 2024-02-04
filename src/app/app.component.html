@@ -225,13 +225,16 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <div [ngStyle]="{'background': config.fondo}">
+        <h1>Hello, {{ title }}</h1>
+      <p>{{descripcion}} 🎉</p>
       <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
       <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
       <videojuego *ngIf="mostrar_videojuegos"></videojuego>
       <zapatillas></zapatillas>
       <cursos></cursos>
+      </div>
+      
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
